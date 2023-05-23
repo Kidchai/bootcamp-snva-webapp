@@ -1,3 +1,5 @@
+package servlet_examples;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,6 +15,6 @@ public class FilterServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
 
-        pw.println("Welcome to the FilterServlet!<br>");
+        pw.println("Welcome to the servlet_examples.FilterServlet!<br>");
     }
 }

@@ -1,3 +1,5 @@
+package servlet_examples;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
@@ -39,7 +41,6 @@ public class ConfigDemoServlet extends HttpServlet {
                 <h3>User Name: %s</h3>
                 <h3>Password: %s</h3>
                 """, driver, dbName, userName, password);
-
         pw.close();
     }
 }

@@ -1,3 +1,5 @@
+package servlet_examples;
+
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

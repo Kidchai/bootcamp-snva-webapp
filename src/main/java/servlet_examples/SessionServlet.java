@@ -1,3 +1,5 @@
+package servlet_examples;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,7 +23,7 @@ public class SessionServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("username", username);
 
-        pw.printf("<a href='sessionServlet2'>Go to the SessionServlet2</a>");
+        pw.printf("<a href='sessionServlet2'>Go to the servlet_examples.SessionServlet2</a>");
         pw.close();
     }
 }
