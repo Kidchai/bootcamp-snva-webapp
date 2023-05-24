@@ -54,7 +54,7 @@ public class ProductDao {
 
             statement.setString(1, product.getName());
             statement.setString(2, product.getDescription());
-            statement.setDouble(3, product.getPrice());
+            statement.setInt(3, product.getPrice());
             statement.setInt(4, product.getQuantity());
             statement.setInt(5, product.getId());
 
@@ -64,6 +64,7 @@ public class ProductDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println("Status: " + status);
         return status;
 
     }

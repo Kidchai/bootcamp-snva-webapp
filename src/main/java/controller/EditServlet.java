@@ -52,6 +52,6 @@ public class EditServlet extends HttpServlet {
                         </tr>
                     </table>
                 """, product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getQuantity());
+        pw.close();
     }
-
 }

@@ -24,7 +24,7 @@ public class EditServlet2 extends HttpServlet {
         int price = Integer.parseInt(request.getParameter("price"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
 
-        Product product = new Product(name, description, price, quantity);
+        Product product = new Product(id, name, description, price, quantity);
 
         int status = ProductDao.update(product);
         if (status > 0) {
@@ -32,5 +32,6 @@ public class EditServlet2 extends HttpServlet {
         } else {
             pw.println("<p>Sorry! Unable to update product</p>");
         }
+        pw.close();
     }
 }
