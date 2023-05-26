@@ -1,4 +1,4 @@
-### Module 3.1: Basic Web Application
+### Module 3: Web Application
 
 This is a simple CRUD web applications that allows users to create, read, update and delete data from a database. 
 
