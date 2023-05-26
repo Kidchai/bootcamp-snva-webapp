@@ -4,9 +4,9 @@ This is a simple CRUD web applications that allows users to create, read, update
 
 Imagine a plant store that needs to keep track of their products.
 
-It's a primitive study project that uses servlets. The application is built using the MVC pattern and uses the DAO pattern to interact with the MySQL database.
+It's a simple study example that Hibernate, Servlets, and MySQL database.
 
-This repo also contains different examples of servlets for study purposes.
+This repo also contains different examples of servlets for study purposes. And other configurations for the web application.
 
 #### Create
 
