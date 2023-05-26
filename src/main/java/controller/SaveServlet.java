@@ -16,6 +16,8 @@ public class SaveServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ProductDao productDao = new ProductDao();
+
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
 
@@ -26,13 +28,11 @@ public class SaveServlet extends HttpServlet {
 
         Product product = new Product(name, description, price, quantity);
 
-        int status = ProductDao.save(product);
+        productDao.save(product);
 
-        if (status > 0) {
-            pw.println("<p>Product saved successfully!</p>");
-            request.getRequestDispatcher("new.html").include(request, response);
-        } else {
-            pw.println("<p>Sorry! Unable to save product</p>");
-        }
+        pw.println("<p>Product saved successfully!</p>");
+        request.getRequestDispatcher("new.html").include(request, response);
+
+        pw.close();
     }
 }

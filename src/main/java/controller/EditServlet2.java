@@ -15,6 +15,7 @@ public class EditServlet2 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ProductDao productDao = new ProductDao();
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
 
@@ -26,12 +27,9 @@ public class EditServlet2 extends HttpServlet {
 
         Product product = new Product(id, name, description, price, quantity);
 
-        int status = ProductDao.update(product);
-        if (status > 0) {
-            response.sendRedirect("view");
-        } else {
-            pw.println("<p>Sorry! Unable to update product</p>");
-        }
+        productDao.update(product);
+        response.sendRedirect("view");
+
         pw.close();
     }
 }

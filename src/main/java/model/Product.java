@@ -1,11 +1,26 @@
 package model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "products_webapp")
 public class Product {
+    @Id
+    @Column(name = "id", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name="name", length = 30, nullable = false)
     private String name;
+    @Column(name="description", length = 300, nullable = false)
     private String description;
+    @Column(name="price")
     private int price;
+    @Column(name="quantity")
     private int quantity;
+
+    public Product() {
+
+    }
 
     public Product(String name, String description, int price, int quantity) {
         this.name = name;

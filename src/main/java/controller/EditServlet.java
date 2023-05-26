@@ -15,7 +15,8 @@ import java.io.PrintWriter;
 public class EditServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ProductDao productDao = new ProductDao();
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
 
@@ -23,7 +24,7 @@ public class EditServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("id"));
 
-        Product product = ProductDao.get(id);
+        Product product = productDao.get(id);
 
         pw.printf("""
                 <form action='edit2' method='post'>

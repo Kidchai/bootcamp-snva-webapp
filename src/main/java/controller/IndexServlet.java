@@ -14,7 +14,8 @@ import java.io.PrintWriter;
 public class IndexServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ProductDao productDao = new ProductDao();
         response.setContentType("text/html");
 
         PrintWriter pw = response.getWriter();
@@ -31,7 +32,7 @@ public class IndexServlet extends HttpServlet {
                     <th></th>
                     <th></th>
                 </tr>""");
-        for (Product product : ProductDao.getAll()) {
+        for (Product product : productDao.getAll()) {
             pw.printf("""
                     <tr>
                         <td>%d</td>
